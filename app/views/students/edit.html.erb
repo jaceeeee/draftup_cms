@@ -1,0 +1,32 @@
+<%= link_to("<< Back to List", students_path, :class => 'back-link') %>
+
+<div class="students edit">
+  <h2>Edit Subject</h2>
+
+  <%= form_for(@student) do |f| %>
+
+  <table summary="Student form fields">
+    <tr>
+      <th>First Name</th>
+      <td><%= f.text_field(:first_name) %></td>
+    </tr>
+    <tr>
+      <th>Last Name</th>
+      <td><%= f.text_field(:last_name) %></td>
+    </tr>
+    <tr>
+      <th>Student Number</th>
+      <td><%= f.text_field(:student_number) %></td>
+    </tr>
+    <tr>
+      <th>Email</th>
+      <td><%= f.text_field(:email) %></td>
+    </tr>
+  </table>
+
+  <div class="form-buttons">
+    <%= f.submit("Update Student") %>
+  </div>
+
+  <% end %>
+</div>

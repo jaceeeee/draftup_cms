@@ -1,0 +1,22 @@
+Hi. This is the official text-form design document of DraftUP
+
+It will provide the following:
+- Tech Stack information
+- Layout
+
+
+Tech Stack information
+- Ruby on Rails
+- Atom Text Editor
+- Mozilla Firefox
+- HTML, CSS, JavaScript
+
+
+Layout
+- Provide the following webpages
+   * Home page
+   * Log in page
+   * Sign up page
+   * DraftUP Proper page
+   * Collaboration page
+   * 
