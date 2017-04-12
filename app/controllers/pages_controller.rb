@@ -1,7 +1,8 @@
 class PagesController < ApplicationController
-  layout false
+  layout 'application'
+  
   def about
     @title = "About us"
-    @content = "This is the about page."    
+    @content = "This is the about page."
   end
 end

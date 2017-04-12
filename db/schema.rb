@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170404053515) do
+ActiveRecord::Schema.define(version: 20170411140210) do
 
   create_table "posts", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "title"
@@ -27,14 +27,14 @@ ActiveRecord::Schema.define(version: 20170404053515) do
   end
 
   create_table "students", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.string   "first_name",     limit: 50
-    t.string   "last_name",      limit: 25
-    t.string   "user_name",      limit: 50
+    t.string   "first_name",      limit: 50
+    t.string   "last_name",       limit: 25
+    t.string   "user_name",       limit: 50
     t.string   "email"
-    t.string   "student_number", limit: 10
-    t.string   "password",       limit: 32, null: false
-    t.datetime "created_at",                null: false
-    t.datetime "updated_at",                null: false
+    t.string   "student_number",  limit: 10
+    t.datetime "created_at",                 null: false
+    t.datetime "updated_at",                 null: false
+    t.string   "password_digest"
   end
 
   create_table "theses", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|

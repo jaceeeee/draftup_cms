@@ -1,6 +1,6 @@
 class StudentsController < ApplicationController
 
-  layout false
+  before_action :confirm_logged_in
 
   def index
     @students = Student.sorted
@@ -53,4 +53,5 @@ class StudentsController < ApplicationController
   def student_params
     params.require(:student).permit(:first_name, :last_name, :password, :email, :student_number)
   end
+
 end
