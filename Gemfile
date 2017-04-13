@@ -35,6 +35,9 @@ gem 'bcrypt', '~> 3.1.7'
 
 # Enables Bootstrap
 gem 'bootstrap', '~> 4.0.0.alpha6'
+# Enables Carrierwave for file uploading
+gem 'carrierwave', '~> 1.0'
+
 
 source 'http://rails-assets.org' do
   gem 'rails-assets-tether', '>= 1.3.3'

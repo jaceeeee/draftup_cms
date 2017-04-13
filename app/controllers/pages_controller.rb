@@ -1,6 +1,6 @@
 class PagesController < ApplicationController
-  layout 'application'
-  
+  layout 'public'
+
   def about
     @title = "About us"
     @content = "This is the about page."

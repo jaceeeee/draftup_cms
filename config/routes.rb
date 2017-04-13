@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  resources :theses, only: [:index, :new, :create, :destroy]  
+
   root 'posts#index'
 
   # user access

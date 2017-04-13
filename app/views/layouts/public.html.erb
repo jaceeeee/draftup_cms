@@ -1,0 +1,15 @@
+<!DOCTYPE>
+<html>
+  <head>
+    <title>DraftUP CMS: <%= @page_title || "Public Area" %></title>
+    <%= stylesheet_link_tag('public', :media => 'all') %>
+  </head>
+  <body>
+
+    <div class="container">
+      <%= yield %>                   
+    </div>
+
+  </body>
+
+</html>

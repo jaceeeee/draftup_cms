@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170411140210) do
+ActiveRecord::Schema.define(version: 20170413024811) do
 
   create_table "posts", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "title"
@@ -41,6 +41,7 @@ ActiveRecord::Schema.define(version: 20170411140210) do
     t.string   "title",      limit: 20
     t.datetime "created_at",            null: false
     t.datetime "updated_at",            null: false
+    t.string   "attachment"
   end
 
 end
