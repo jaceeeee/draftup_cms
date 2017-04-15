@@ -2,6 +2,7 @@
 <html>
   <head>
     <title>DraftupCms</title>
+    <%= favicon_link_tag("logosample.ico") %>
     <%= csrf_meta_tags %>
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
@@ -18,10 +19,14 @@
 
     <nav class="navbar navbar-light bg-faded">
       <div class="container-fluid">
-        <a class="navbar-brand" href="#">Navbar</a>
+        <!-- <a class="navbar-brand" href="#">Navbar</a> -->
         <ul class="inlineList" >
           <li class="nav-item active" display="inline">
-            <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+            <%= image_tag('logosample.ico', :size => '50x50', :alt => 'draftUP logo') %>
+          </li>
+          <li class="nav-item active" display="inline">
+            <%= link_to("Home", admin_path, :class => "nav-link") %>
+            <!-- <a class="nav-link" href="">Home <span class="sr-only">(current)</span></a> -->
           </li>
           <li class="nav-item" display="inline">
             <a class="nav-link" href="#">Features</a>
@@ -30,7 +35,7 @@
             <a class="nav-link" href="#">Pricing</a>
           </li>
           <li class="nav-item" display="inline">
-            <a class="nav-link" href="#">About</a>
+            <%= link_to("About us", pages_about_path, :class => "nav-link") %>
           </li>
           <li class="nav-item" display="inline">
             <form class="form-inline pull-xs-right">
@@ -40,7 +45,7 @@
           </li>
         </ul>
       </div>
-    </nav>  
+    </nav>
 
     <div class="container">
       <div class="row">
@@ -50,6 +55,15 @@
         <div class="col-sm-2">
           <h2>TODO: Create Sidebar</h2>
           <p>Allow navigation to different parts of the user's account</p>
+          <p>
+            <% if @student %>
+              <p>You are logged in as:
+              <%= @student.first_name + " " + @student.last_name %>
+              </p>
+            <% else %>
+              <p>You are not logged in</p>
+            <% end %>
+          </p>
         </div>
       </div>
     </div>

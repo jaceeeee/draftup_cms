@@ -1,7 +1,7 @@
 <%= link_to("<< Back to List", students_path, :class => 'back-link') %>
 
 <div class="students new">
-  <h2>Create Subject</h2>
+  <h2>Create Student</h2>
 
   <%= form_for(@student, :url => students_path, :method => 'post') do |f| %>
 
@@ -22,6 +22,13 @@
       <th>Email</th>
       <td><%= f.text_field(:email) %></td>
     </tr>
+    <tr>
+      <th>Username</th>
+      <td><%= f.text_field(:user_name) %></td>
+    </tr>
+    <tr>
+      <th>Password</th>
+      <td><%= f.password_field(:password) %></td>
   </table>
 
   <div class="form-buttons">

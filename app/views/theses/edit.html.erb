@@ -1,0 +1,27 @@
+<% if !@thesis.errors.empty? %>
+  <div class="alert alert-error">
+
+    <ul>
+      <% @thesis.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+    </ul>
+
+  </div>
+<% end %>
+
+
+<div class="well">
+  <table class="table table-bordered table-striped">
+    <%= form_for(@thesis, :method => 'patch') do |f| %>
+  	<tr>
+  		<th><%= f.label :title %></th>
+  		<td><%= f.text_field :title %></td>
+  	</tr>
+  	<tr>
+  		<th><%= f.label :attachment %></th>
+  		<td><%= f.file_field :attachment %></td>
+  </table>
+  <%= f.submit("Update Thesis", class: "btn btn-primary") %>
+  <% end %>
+</div>

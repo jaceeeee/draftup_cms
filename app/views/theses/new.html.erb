@@ -11,11 +11,16 @@
 <% end %>
 
 <div class="well">
-  <%= form_for(@thesis, html: { multipart: true }) do |f| %>
-    <%= f.label :title %>
-    <%= f.text_field :title %>
-    <%= f.label :attachment %>
-    <%= f.file_field :attachment %>
-    <%= f.submit "Save", class: "btn btn-primary" %>
+  <table class="table table-bordered table-striped">
+    <%= form_for(@thesis, :method => 'post') do |f| %>
+  	<tr>
+  		<th><%= f.label :title %></th>
+  		<td><%= f.text_field :title %></td>
+  	</tr>
+  	<tr>
+  		<th><%= f.label :attachment %></th>
+  		<td><%= f.file_field :attachment %></td>
+  </table>
+  <%= f.submit("Create Thesis", class: "btn btn-primary") %>
   <% end %>
 </div>

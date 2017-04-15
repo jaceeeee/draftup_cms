@@ -1,7 +1,5 @@
 class StudentsController < ApplicationController
 
-  before_action :confirm_logged_in
-
   def index
     @students = Student.sorted
   end
@@ -16,10 +14,9 @@ class StudentsController < ApplicationController
 
   def create
     @student = Student.new(student_params)
-    @student.password = "*****"
     # defaulted, for now
     if @student.save
-      redirect_to(students_path)
+      redirect_to(root_path)
     else
       render('new')
     end
@@ -34,7 +31,7 @@ class StudentsController < ApplicationController
     if @student.update_attributes(student_params)
       redirect_to(student_path(@student))
     else
-      render('new')
+      render('edit')
     end
   end
 
@@ -51,7 +48,7 @@ class StudentsController < ApplicationController
 
   private
   def student_params
-    params.require(:student).permit(:first_name, :last_name, :password, :email, :student_number)
+    params.require(:student).permit(:first_name, :last_name, :password, :email, :student_number, :user_name)
   end
 
 end

@@ -1,0 +1,16 @@
+<h1>Let's create a new collaboration</h1>
+
+<div class="well">
+  <table class="table table-bordered table-striped">
+    <%= form_for(@collaboration, :method => 'post') do |f| %>
+  	<tr>
+  		<th><%= f.label :title %></th>
+  		<td><%= f.text_field :title %></td>
+  	</tr>
+  	<tr>
+  		<th><%= f.label :attachment %></th>
+  		<td><%= f.file_field :attachment %></td>
+  </table>
+  <%= f.submit("Create Thesis", class: "btn btn-primary") %>
+  <% end %>
+</div>
