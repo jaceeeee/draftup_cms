@@ -1,24 +1,7 @@
-# README
+# DraftUP
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+A Thesis assistance application made on the Ruby on Rails framework.
 
-Things you may want to cover:
+![DraftUP Logo](https://github.com/jaceeeee/draftup_cms/blob/master/app/assets/images/logosample.png "Logo Title Text 1")
 
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+Soon.
