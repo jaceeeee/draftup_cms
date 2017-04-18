@@ -1,3 +1,3 @@
 class CollaboratedThesis < Thesis
-  has_one :collaborator
+  has_one :collaboration
 end
