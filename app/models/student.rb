@@ -6,5 +6,5 @@ class Student < ApplicationRecord
 
   has_many :projects
   has_many :theses, :through => :projects
-  belongs_to :collaboration
+  belongs_to :collaboration, { :optional => true }
 end
