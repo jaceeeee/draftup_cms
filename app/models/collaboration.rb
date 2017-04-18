@@ -1,3 +1,4 @@
 class Collaboration < ApplicationRecord
-  has_one :collaborator
+  has_many :students, :class_name => 'Collaboration'
+  has_one :collaboratedthesis
 end
