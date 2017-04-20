@@ -7,6 +7,10 @@
 
   <table summary="Student form fields">
     <tr>
+      <th>Profile Picture</th>
+      <td><%= f.file_field :profile_pic %></td>
+    </tr>
+    <tr>
       <th>First Name</th>
       <td><%= f.text_field(:first_name) %></td>
     </tr>
@@ -28,7 +32,7 @@
     </tr>
     <tr>
       <th>Password</th>
-      <td><%= f.text_field(:password) %></td>
+      <td><%= f.password_field(:password) %></td>
     </tr>
   </table>
 
@@ -38,3 +42,5 @@
 
   <% end %>
 </div>
+
+
