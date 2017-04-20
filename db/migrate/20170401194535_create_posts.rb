@@ -13,6 +13,7 @@ class CreatePosts < ActiveRecord::Migration[5.0]
   end
 end
 
+# helpful rails command line methods
 # rails db:migrate:up VERSION=<number>
 # rails db:migrate:down VERSION=<number>
 # rails db:migrate:redo VERSION=<number>

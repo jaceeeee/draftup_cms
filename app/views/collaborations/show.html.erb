@@ -1,2 +1,19 @@
-<h1>Collaborations#show</h1>
-<p>Find me in app/views/collaborations/show.html.erb</p>
+<h1>Your collaboration</h1><br />
+<%= link_to("<< Back to index", collaborations_path, :class => "btn btn-success") %><br /><br />
+
+<div class="well">
+  <table class="table table-bordered table-striped">
+  	<tr>
+  		<th>Team Name</th>
+  		<td><%= @collaboration.team_name %></td>
+  	</tr>
+  	<tr>
+  		<th>Purpose</th>
+  		<td><%= @collaboration.purpose %></td>
+    </tr>
+    <tr>
+      <th>Member Limit</th>
+      <td><%= @collaboration.member_limit %></td>
+    </tr>
+  </table>
+</div>

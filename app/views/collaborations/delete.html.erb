@@ -1,2 +1,10 @@
-<h1>Collaborations#delete</h1>
-<p>Find me in app/views/collaborations/delete.html.erb</p>
+<div align="center"><%= link_to("<< Back to list", collaborations_path, :class => 'btn btn-success') %><br /><br /></div>
+
+<div container="collaborations delete">
+  <h1 align="center">Delete Collaboration</h1><br />
+  <%= form_for(@collaboration, :url => collaboration_path(@collaboration), :method => 'delete') do |f| %>
+    <p align="center">Are you sure you want to permanently delete this collaboration?</p>
+    <h3 class="reference-name", align="center"><%= "\"" + f.object.team_name + "\"" %></h3><br />
+    <div align="center"><%= f.submit("Delete Collaboration", class: "btn btn-danger") %></div>
+  <% end %>
+</div>

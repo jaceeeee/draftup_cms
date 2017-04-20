@@ -4,12 +4,17 @@
   <table class="table table-bordered table-striped">
     <%= form_for(@collaboration, :method => 'post') do |f| %>
   	<tr>
-  		<th><%= f.label :title %></th>
-  		<td><%= f.text_field :title %></td>
+  		<th><%= f.label :team_name %></th>
+  		<td><%= f.text_field :team_name %></td>
   	</tr>
   	<tr>
-  		<th><%= f.label :attachment %></th>
-  		<td><%= f.file_field :attachment %></td>
+  		<th><%= f.label :purpose %></th>
+  		<td><%= f.text_field :purpose %></td>
+    </tr>
+    <tr>
+      <th><%= f.label :member_limit %></th>
+      <td><%= f.text_field :member_limit %></td>
+    </tr>
   </table>
   <%= f.submit("Create Thesis", class: "btn btn-primary") %>
   <% end %>

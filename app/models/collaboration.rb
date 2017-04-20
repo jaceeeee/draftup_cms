@@ -1,3 +1,3 @@
 class Collaboration < ApplicationRecord
-  has_one :collaborator
+  has_and_belongs_to_many :students
 end

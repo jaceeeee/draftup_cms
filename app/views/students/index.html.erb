@@ -14,13 +14,12 @@
 
     <% @students.each do |student| %>
     <tr>
+      <td><%= link_to "Download Profile Picture", student.profile_pic_url %></td>
       <td><%= student.id %></td>
       <td><%= student.first_name + " " + student.last_name %></td>
       <td><%= student.student_number %></td>
       <td><%= student.email %></td>
       <td class="actions">
-        <!-- {:controller => 'subjects', :action => 'show', :id => subject.id} -->
-        <!--  subject_path(subject)-->
         <%= link_to("Show", student_path(student), :class => 'action show') %>
         <%= link_to("Edit", edit_student_path(student), :class => 'action edit') %>
         <%= link_to("Delete", delete_student_path(student), :class => 'action delete') %>

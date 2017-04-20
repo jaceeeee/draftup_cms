@@ -10,22 +10,20 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170415024621) do
-
-  create_table "collaborated_theses", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
+ActiveRecord::Schema.define(version: 20170420163859) do
 
   create_table "collaborations", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
     t.string   "team_name"
+    t.string   "purpose"
+    t.integer  "member_limit"
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
   end
 
-  create_table "collaborators", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+  create_table "collaborations_students", id: false, force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.integer "student_id"
+    t.integer "collaboration_id"
+    t.index ["student_id", "collaboration_id"], name: "index_collaborations_students_on_student_id_and_collaboration_id", using: :btree
   end
 
   create_table "projects", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
@@ -46,6 +44,7 @@ ActiveRecord::Schema.define(version: 20170415024621) do
     t.datetime "created_at",                 null: false
     t.datetime "updated_at",                 null: false
     t.string   "password_digest"
+    t.string   "profile_pic"
   end
 
   create_table "temp", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|

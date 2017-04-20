@@ -1,3 +1,4 @@
+# controller for thesis
 class ThesesController < ApplicationController
 
 # set find student to a before action to access sessions for student

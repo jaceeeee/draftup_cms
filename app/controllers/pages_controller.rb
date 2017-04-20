@@ -1,8 +1,9 @@
+# for additional pages
 class PagesController < ApplicationController
   layout 'public'
 
+# renders about developer page
   def about
-    @title = "About us"
-    @content = "This is the about page."
   end
+  
 end

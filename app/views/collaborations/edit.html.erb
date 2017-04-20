@@ -1,2 +1,24 @@
-<h1>Collaborations#edit</h1>
-<p>Find me in app/views/collaborations/edit.html.erb</p>
+<%= link_to("<< Back to List", collaborations_path, :class => 'btn btn-success') %><br /><br />
+
+<div class="collaborations edit">
+  <h2>Edit Collaboration</h2><br />
+
+  <%= form_for(@collaboration) do |f| %>
+
+  <table summary="Collaboration form fields">
+    <tr>
+      <th>Team Name</th>
+      <td><%= f.text_field(:team_name) %></td>
+    </tr>
+    <tr>
+      <th>Purpose</th>
+      <td><%= f.text_field(:purpose) %></td>
+    </tr>
+  </table>
+
+  <br />
+
+  <%= f.submit("Update Collaboration", class: "btn btn-warning") %>  
+
+  <% end %>
+</div>

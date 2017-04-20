@@ -3,12 +3,12 @@
 <div class="students new">
   <h2>Create Student</h2>
 
-  <%= form_for(@student, :url => students_path, :method => 'post') do |f| %>
+  <%= form_for(@student) do |f| %>
 
   <table summary="Student form fields">
     <tr>
-      <th>First Name</th>
-      <td><%= f.text_field(:first_name) %></td>
+      <th>Profile Picture</th>
+      <td><%= f.file_field(:profile_pic) %></td>
     </tr>
     <tr>
       <th>Last Name</th>

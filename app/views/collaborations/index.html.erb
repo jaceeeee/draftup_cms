@@ -1,14 +1,32 @@
-<h1>This is collaborations</h1>
+<h1>This is collaborations!</h1><br />
+<%= link_to('Add a collaboration', new_collaboration_path, :class => 'btn btn-primary') %> <br /><br />
 
 <table class="table table-bordered table-striped">
   <tr class="header">
     <th>#</th>
     <th>Team Name</th>
+    <th>Purpose</th>
+    <th>Member Limit</th>
     <th>Members</th>
+    <th>Actions</th>
+  </tr>
+  <tr>
+    <% @collaborations.each do |collaboration| %>
+      <td><%= collaboration.id %></td>
+      <td><%= collaboration.team_name %></td>
+      <td><%= collaboration.purpose %></td>
+      <td><%= collaboration.member_limit %></td>
+      <td>
+        <% collaboration.students.each do |s| %>
+          <%= s.first_name + " " + s.last_name %>
+        <% end %>
+      </td>
+      <td>
+        <%= link_to("Show ", collaboration_path(collaboration), :class => 'btn btn-success') %>
+        <%= link_to("Edit ", edit_collaboration_path(collaboration), :class => 'btn btn-primary') %>
+        <%= link_to("Delete", delete_collaboration_path(collaboration), :class => 'btn btn-danger') %>
+      </td>
+    <% end %>
   </tr>
 
-  <tr>
-    <td><%= @collaboration.team_name %></td>
-    <td><%= @collaboration.collaborator.students %></td>
-  </tr>
 </table>
