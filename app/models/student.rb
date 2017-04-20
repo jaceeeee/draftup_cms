@@ -6,5 +6,10 @@ class Student < ApplicationRecord
 
   has_many :projects
   has_many :theses, :through => :projects
-  belongs_to :collaboration
+  belongs_to :collaboration, { :optional => true }
+
+  mount_uploader :profile_pic, ProfilePictureUploader # Tells rails to use this uploader for this model.
+  validates :last_name, presence: true # Make sure the owner's name is present.
+
 end
+
