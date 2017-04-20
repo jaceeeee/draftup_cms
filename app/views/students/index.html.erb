@@ -14,6 +14,7 @@
 
     <% @students.each do |student| %>
     <tr>
+      <td><%= link_to "Download Profile Picture", student.profile_pic_url %></td>
       <td><%= student.id %></td>
       <td><%= student.first_name + " " + student.last_name %></td>
       <td><%= student.student_number %></td>
@@ -29,3 +30,4 @@
     <% end %>
   </table>
 </div>
+
