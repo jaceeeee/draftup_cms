@@ -1,0 +1,34 @@
+<h1>Join a DraftUP Collaboration!</h1><br />
+<%= link_to("<< Collaborations", collaborations_path, :class => "btn btn-success") %>
+<br /><br />
+<table class="table table-bordered table-striped">
+  <thead>
+    <th>#</th>
+    <th>Team Name</th>
+    <th>Purpose</th>
+    <th>Member Limit</th>
+    <th>Members</th>
+    <th>Actions</th>
+  </thead>
+  <tbody>
+    <% @collaborations.each do |collaboration| %>
+      <tr>
+        <% unless @student.collaborations.where(:id => collaboration.id).first %>
+          <td><%= collaboration.id %></td>
+          <td><%= collaboration.team_name %></td>
+          <td><%= collaboration.purpose %></td>
+          <td><%= collaboration.member_limit %></td>
+          <td>
+            <% collaboration.students.each do |s| %>
+              <%= s.first_name + " " + s.last_name %>
+            <% end %>
+          </td>
+          <td>
+            <div align="center"><%= link_to("Join", edit_collaboration_join_path(collaboration), :class => 'btn btn-primary btn-sm') %></div>
+          </td>
+        <% end %>
+      </tr>
+    <% end %>
+  </tbody>
+
+</table>

@@ -1,6 +1,6 @@
 <%= link_to("<< Back to List", students_path, :class => 'back-link') %>
 
-<div class="students edit">
+<div class="students edit" align="center">
   <h2>Edit your account!</h2>
 
   <%= form_for(@student) do |f| %>
@@ -35,10 +35,9 @@
       <td><%= f.text_field(:password) %></td>
     </tr>
   </table>
-
   <div class="form-buttons">
     <%= f.submit("Update Student") %>
   </div>
-
   <% end %>
 </div>
+<br /><br /><br /><br /><br />

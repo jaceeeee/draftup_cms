@@ -1,8 +1,6 @@
-<h1>This is menu: where the theses are going to come out! <%= "Hello #{@student.first_name} #{@student.last_name}!"%> Welcome to DraftUP!</h1>
-<p>Awesome bootstrap activated</p>
-<p>TODO: remind front-end to design the main menu</p>
-<p> This is stuff that the user wants to manage.</p>
-<p> For example, THESES!!! </p>
-<%= link_to("Logout", access_logout_path) %>
-<%= link_to("My Theses", theses_path) %>
-<%= link_to("My Collaborations", collaborations_path) %>
+<h1><%= "Hello #{@student.user_name} !"%> Welcome to DraftUP!</h1>
+<br>
+<h2>Here are your details:</h2><br>
+<p><%= "Name: #{@student.first_name} #{@student.last_name}"%></p>
+<p><%= "Student Number: #{@student.student_number}"%>
+<br /><br /><br /><br /><br /><br /><br />

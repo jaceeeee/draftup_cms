@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>DraftUP</title>
+    <%= favicon_link_tag("draftup_icon.ico") %>
+    <%= csrf_meta_tags %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+
+</head>
+<style>
+  body {
+    background-color: #494949;
+  }
+  .container {
+    background-color: #fdfacd;
+  }
+  </style>
+<body>
+<% if !flash[:notice].blank? %>
+<div class="alert alert-info">
+    <%= flash[:notice] %>
+</div>
+<% end %>
+
+<nav class="navbar fixed-top navbar-light bg-faded" style="background-color:black">
+    <div class="container-fluid">
+        <!-- <a class="navbar-brand" href="#">Navbar</a> -->
+        <ul class="inlineList" >
+            <li class="nav-item active" display="inline">
+                <%= link_to(image_tag('text.png', :size => '160x50', :alt => 'draftUP logo'), public_views_path) %>
+
+                <!--    </li>
+                    <li class="nav-item active" display="inline">
+                      <%= link_to("Home", admin_path, :class => "nav-link") %>
+                    </li>
+                    <li class="nav-item" display="inline">
+                      <a class="nav-link" href="#">About</a>
+                    </li>
+                    <li class="nav-item" display="inline">
+                      <a class="nav-link" href="#">Team</a>
+                    </li>
+                  -->
+        </ul>
+    </div>
+</nav>
+
+<style>
+    .jumbotron {
+    background-color:#852426;
+    text-align:center;
+    height: 200px;
+    }
+    .title {
+      font-size: 20;
+    }
+	.myPage{
+		color: white;
+		text-align: center;
+		font-size: 20px;
+	}
+    </style>
+<div class="container" style="border: 10px solid black; margin-bottom:10em;">
+    <div class="jumbotron jumbotron-fluid">
+        <h1 class="display-3" style="color: white">Welcome to DraftUP!</h1>
+        <p class="lead" style="color: white">...your ever friendly thesis-assistance web application</p>
+    </div>
+    <div class="row">
+        <div class="col-sm-9">
+            <%= yield %>
+        </div>
+
+        <div class="col-sm-3">
+            <!-- Page Content -->
+            <div style="margin-right:0%">
+                <div class="w3-container" style="background-color: #044524;">
+                    <h1><div class="myPage">My Page</div></h1>
+                </div>
+                <div class="w3-container" style="margin-bottom:5em;">
+                    <p>
+                        <% if @student != nil && @student.first_name != nil %>
+                    <p>You are logged in as:
+                        <%= @student.first_name + " " + @student.last_name %>
+						<p><%= link_to("My Profile", admin_path) %></p>
+						<p><%= link_to("My Theses", theses_path) %></p>
+            <p><%= link_to("My Collaborations", collaborations_path) %></p>
+						<p><%= link_to("Logout", access_logout_path) %></p>
+                    </p>
+                    <% else %>
+                    <p><%= "You are not logged in" %></p>
+                    <% end %>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

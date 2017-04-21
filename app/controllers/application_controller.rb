@@ -10,6 +10,13 @@ class ApplicationController < ActionController::Base
       redirect_to(access_login_path)
       # redirect action prevents action from logging, so be careful
     end
+  end
 
+  def find_student
+    if session[:student_id]
+      @student = Student.find(session[:student_id])
+    else
+      redirect_to_login
+    end
   end
 end

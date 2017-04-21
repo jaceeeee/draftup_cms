@@ -1,6 +1,6 @@
 # controller for thesis
 class ThesesController < ApplicationController
-
+layout 'app_theme'
 # set find student to a before action to access sessions for student
   before_action :find_student
 
@@ -58,13 +58,4 @@ class ThesesController < ApplicationController
       redirect_to(access_login_path)
     end
   end
-
-  def find_student
-    if session[:student_id]
-      @student = Student.find(session[:student_id])
-    else
-      redirect_to_login
-    end
-  end
-
 end

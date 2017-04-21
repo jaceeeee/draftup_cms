@@ -1,16 +1,13 @@
 <% if !@thesis.errors.empty? %>
   <div class="alert alert-error">
-
     <ul>
       <% @thesis.errors.full_messages.each do |msg| %>
         <li><%= msg %></li>
       <% end %>
     </ul>
-
   </div>
 <% end %>
-
-
+<%= link_to("Theses", theses_path, class: "btn btn-success") %><br /><br />
 <div class="well">
   <table class="table table-bordered table-striped">
     <%= form_for(@thesis, :method => 'patch') do |f| %>

@@ -1,6 +1,6 @@
 <%= link_to("<< Back to List", students_path, :class => 'back-link') %>
 
-<div class="students new">
+<div class="students new" align="center">
   <h2>Create Student</h2>
 
   <%= form_for(@student) do |f| %>
@@ -9,6 +9,10 @@
     <tr>
       <th>Profile Picture</th>
       <td><%= f.file_field(:profile_pic) %></td>
+    </tr>
+    <tr>
+      <th>First Name</th>
+      <td><%= f.text_field(:first_name) %></td>
     </tr>
     <tr>
       <th>Last Name</th>
@@ -37,3 +41,4 @@
 
   <% end %>
 </div>
+<br /><br /><br /><br /><br />

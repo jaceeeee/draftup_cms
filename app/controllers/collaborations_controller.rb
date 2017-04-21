@@ -1,4 +1,5 @@
 class CollaborationsController < ApplicationController
+  layout 'app_theme'
 # still empty; needs tweaking
   before_action :find_student
 
@@ -29,7 +30,7 @@ class CollaborationsController < ApplicationController
 
   def update
     @collaboration = Collaboration.find(params[:id])
-    if @collaboration.update_attributes(student_params)
+    if @collaboration.update_attributes(collaboration_params)
       redirect_to(collaboration_path(@collaboration))
     else
       render 'edit'

@@ -1,6 +1,5 @@
 Rails.application.routes.draw do
-
-  # root path
+# root path
   root 'public_views#index'
 
 # resourceful route for :collaborations
@@ -34,5 +33,9 @@ Rails.application.routes.draw do
       get :delete
     end
   end
+
+# routes for collaboration joins across all users
+  resources :collaboration_joins, only: [:index, :edit, :update]
+  get ':controller(/:action(/:id))'
 
 end

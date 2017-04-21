@@ -1,5 +1,5 @@
 class AccessController < ApplicationController
-  layout 'application'
+  layout 'app_theme'
 
   # confirm logged in before accessing menu
   before_action :confirm_logged_in, :except => [:login, :attempt_login, :logout]

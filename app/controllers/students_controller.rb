@@ -2,7 +2,7 @@
 # ignore
 # some parts will go away after this current version of app
 class StudentsController < ApplicationController
-  layout 'public'
+  layout 'app_theme'
 # displays all students, in ascending order according to :last_name
   def index
     @students = Student.sorted
@@ -56,7 +56,6 @@ class StudentsController < ApplicationController
     @student = Student.find(params[:id])
     @student.destroy
     redirect_to(students_path)
-
   end
 
 # allow a student to be saved by permitting all the following attributes

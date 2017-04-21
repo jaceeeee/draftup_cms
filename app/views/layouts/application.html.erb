@@ -1,72 +1,139 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>DraftupCms</title>
-    <%= favicon_link_tag("logosample.ico") %>
+<head>
+    <title>DraftUP</title>
+    <%= favicon_link_tag("draftup_icon.ico") %>
     <%= csrf_meta_tags %>
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
 
-  </head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 
-  <body>
-    <% if !flash[:notice].blank? %>
-  		<div class="alert alert-info">
-  			<%= flash[:notice] %>
-  		</div>
-		<% end %>
+</head>
+<style>
+  body {
+    background-color: #494949;
+  }
+  .container {
+    background-color: #fdfacd;
+  }
+  </style>
+<body>
+<% if !flash[:notice].blank? %>
+<div class="alert alert-info">
+	<div class="container">
+		<%= flash[:notice] %>
+	</div>
+</div>
+<% end %>
 
-    <nav class="navbar navbar-light bg-faded">
-      <div class="container-fluid">
+<nav class="navbar fixed-top navbar-light bg-faded" style="background-color:black">
+    <div class="container-fluid">
         <!-- <a class="navbar-brand" href="#">Navbar</a> -->
         <ul class="inlineList" >
-          <li class="nav-item active" display="inline">
-            <%= image_tag('logosample.ico', :size => '50x50', :alt => 'draftUP logo') %>
-          </li>
-          <li class="nav-item active" display="inline">
-            <%= link_to("Home", admin_path, :class => "nav-link") %>
-            <!-- <a class="nav-link" href="">Home <span class="sr-only">(current)</span></a> -->
-          </li>
-          <li class="nav-item" display="inline">
-            <a class="nav-link" href="#">Features</a>
-          </li>
-          <li class="nav-item" display="inline">
-            <a class="nav-link" href="#">Pricing</a>
-          </li>
-          <li class="nav-item" display="inline">
-            <%= link_to("About us", pages_about_path, :class => "nav-link") %>
-          </li>
-          <li class="nav-item" display="inline">
-            <form class="form-inline pull-xs-right">
-              <input class="form-control" type="text" placeholder="Search">
-              <button class="btn btn-success-outline" type="submit">Search</button>
-            </form>
-          </li>
+            <li class="nav-item active" display="inline">
+                <%= link_to(image_tag('text.png', :size => '160x50', :alt => 'draftUP logo'), public_views_path) %>
+
+                <!--    </li>
+                    <li class="nav-item active" display="inline">
+                      <%= link_to("Home", admin_path, :class => "nav-link") %>
+                    </li>
+                    <li class="nav-item" display="inline">
+                      <a class="nav-link" href="#">About</a>
+                    </li>
+                    <li class="nav-item" display="inline">
+                      <a class="nav-link" href="#">Team</a>
+                    </li>
+                  -->
         </ul>
-      </div>
-    </nav>
-
-    <div class="container">
-      <div class="row">
-        <div class="col-sm-10">
-          <%= yield %>
-        </div>
-        <div class="col-sm-2">
-          <h2>TODO: Create Sidebar</h2>
-          <p>Allow navigation to different parts of the user's account</p>
-          <p>
-            <% if @student %>
-              <p>You are logged in as:
-              <%= @student.first_name + " " + @student.last_name %>
-              </p>
-            <% else %>
-              <p>You are not logged in</p>
-            <% end %>
-          </p>
-        </div>
-      </div>
     </div>
+</nav>
 
-  </body>
+<style>
+    .jumbotron {
+    background-color:#852426;
+    text-align:center;
+    height: 200px;
+    }
+    .title {
+      font-size: 20;
+    }
+	.carousel .item {
+		height: 100px;
+	}
+	.myPage{
+		color: white;
+		text-align: center;
+		font-size: 20px;
+	}
+    </style>
+	<div class="container" style="border: 10px solid black;">
+		<div class="jumbotron jumbotron-fluid">
+			<h1 class="display-3" style="color: white">Welcome to DraftUP!</h1>
+			<p class="lead" style="color: white">...your ever friendly thesis-assistance web application</p>
+		</div>
+		<div class="row">
+			<div class="col-sm-9">
+
+				<div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+					<div class="carousel-inner" role="listbox">
+						<div class="carousel-item active">
+							<div class="container" style="height:400px;">
+								<img class="d-block img-fluid" src="black.jpg" alt="First slide">
+							</div>
+						</div>
+						<div class="carousel-item">
+							<div class="container" style="height:400px;">
+								<img class="d-block img-fluid" src="black.jpg" alt="Second slide">
+							</div>
+						</div>
+						<div class="carousel-item">
+							<div class="container" style="height:400px;">
+								<img class="d-block img-fluid" src="black.jpg" alt="Third slide">
+							</div>
+						</div>
+					</div>
+					 <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+						<span class="carousel-control-prev-icon" aria-hidden="true"></span>
+						<span class="sr-only">Previous</span>
+					</a>
+					<a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+						<span class="carousel-control-next-icon" aria-hidden="true"></span>
+						<span class="sr-only">Next</span>
+					</a>
+				</div>
+
+
+            <%= yield %>
+        </div>
+
+        <div class="col-sm-3">
+            <!-- Page Content -->
+            <div style="margin-right:0%">
+                <div class="w3-container" style="background-color: #044524;">
+                    <h1><div class="myPage">My Page</div></h1>
+                </div>
+                <div class="w3-container" style="margin-bottom:5em;">
+                    <p>
+                        <% if @student %>
+                    <p>You are logged in as:
+                        <%= @student.first_name + " " + @student.last_name %>
+						<p><%= link_to("My Profile", admin_path) %></p>
+						<p><%= link_to("My Theses", theses_path) %></p>
+            <p><%= link_to("My Collaborations", collaborations_path) %></p>
+            <p><%= link_to("Logout", access_logout_path) %></p>
+                    </p>
+                    <% else %>
+                    <p>You are not logged in</p>
+                    <% end %>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <p> <img src="/team.png" width="100%"> </img></p>
+</div>
+</body>
 </html>
